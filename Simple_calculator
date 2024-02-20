@@ -1,0 +1,30 @@
+def add(num1,num2):
+    return num1+num2
+def sub(num1,num2):
+    return num1-num2
+def mul(num1,num2):
+    return num1*num2
+def div(num1,num2):
+    return num1/num2
+def rem(num1,num2):
+    return num1%num2
+def divide(num1,num2):
+    return num1//num2
+def calculator(op,num1,num2):
+    switch = {
+        '+': add,
+        '-': sub,
+        '*': mul,
+        '/': div,
+        '%': rem,
+        '//': divide
+    }
+    operator = switch.get(op)
+    if operator:
+        return operator(num1,num2)
+    else:
+        return "Invalid operator"
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+op = input("Enter the operation to be performed: ")
+print("Result",calculator(op,num1,num2))
